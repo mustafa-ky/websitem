@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa KAYA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    * {
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    body {
+        background-color: #222a27; /* Dark Gray Background */
+        color: #a7946e;
+    }
+    
+    header {
+        position: absolute; /* Menü sabitlendi */
+        width: 100%;
+        top: -16px;
+        left: 0;
+        margin: 0px;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+
+    nav ul {
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .logo-container {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo-button {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-button img {
+        /*width: 40px; /* Logo boyutunu ayarla */
+        height: 50px;
+        /*border-radius: 50%;*/
+        margin-right: 10px;
+    }
+
+    .logo-button span {
+        font-family: 'Raleway';
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    /*
+    .logo-button:hover {
+        transform: scale(1.1);
+    }
+    */
+    section {
+        padding: 80px 10%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    #about {
+        padding: 100px 0;
+        display: flex;
+        justify-content: start;
+        margin-left: 25px;
+        align-items: start;
+        background: #222a27;
+    }
+
+    /* Timeline (Dikey Çizgi) */
+    .timeline {
+        position: relative;
+        padding-left: 40px;
+        border-left: 3px solid #D2691E; /* Tarçın Kahverengisi */
+    }
+
+    /* Timeline İçindeki Öğeler */
+    .timeline-item {
+        display: flex;
+        align-items: left;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    /* İçi Boş Daire */
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 5px solid #222a27; /* Kabak Sarısı */
+        background-color: rgb(250, 250, 250);
+        position: absolute;
+        left: -52px;
+    }
+
+    /* İçerik Kutusu */
+    .text-box {
+        /*margin-left: 0px;
+        padding: 0px;*/
+        margin-top: -12px;
+    }
+
+    .text-box h3 {
+        font-size: 14px;
+        color: #E8A735; /* Kabak Sarısı */
+        margin-bottom: -5px;
+    }
+
+    .text-box p {
+        font-size: 12px;
+        color: #ffffff;
+        line-height: 1.4;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a style="text-decoration: none;" href="main.html">
+                <button class="logo-button">
+                    <img src="img/mklg.png" alt="Logo">
+                </button>
+                </a>
+            </div>
+            <ul>
+                <li><a style="text-decoration: underline;" href="about.html">Hakkımda</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div>
+            <p style="font-size: 14px;">
+                21 Şubat 2001 tarihinde Kağıthane'de dünyaya geldim.
+            </p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="text-box">
+                        <h3>2012-2015 (Ortaokul)</h3>
+                        <p>Okul takımında(kale) ve amatör kulüpte(stoper) <b>futbol</b> oynadım. Okulda çeyrek finale kadar yükseldik, amatörde resmî müsabakalara çıktık ve kendime her zaman ilk 11'de yer buldum.</p>
+                        <p>Belediyenin <b>gitar</b> ve <b>tiyatro</b> kurslarına kaydoldum ve bir kaç ay devam ettim ancak maalesef pek uzun soluklu olmadı.</p>
+                        <p><b>İzcilik</b> kampına katıldım. Burada <b>binicilik</b> ve <b>okçuluk</b> gibi faaliyetlerde bulunduk. <a style="color: #65716c;">(Attığım okları aynı delikte topladığımı da belirtmek isterim)</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="text-box">
+                        <h3>2015-2019 (Lise)</h3>
+                        <p>Freelance olarak ilk büyük tasarım projemi tamamladım.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="text-box">
+                        <h3>2024 - Kendi Portföyümü Yayınladım</h3>
+                        <p>Kendi web sitemi tasarlayıp yayına aldım.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="circle"></div>
+                    <div class="text-box">
+                        <h3>2024 - Kendi Portföyümü Yayınladım</h3>
+                        <p>Kendi web sitemi tasarlayıp yayına aldım.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

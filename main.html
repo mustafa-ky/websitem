@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa KAYA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    body {
+        background-color: #222a27; /* Dark Gray Background */
+        color: #ffffff;
+    }
+    
+    header {
+        position: fixed; /* Menü sabitlendi */
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 100;
+        backdrop-filter: blur(2px);
+    }
+
+    nav ul {
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .logo-container {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo-button {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .logo-button img {
+        /*width: 40px; /* Logo boyutunu ayarla */
+        height: 50px;
+        /*border-radius: 5%;*/
+        margin-right: 10px;
+    }
+
+    .logo-button span {
+        font-family: 'Raleway';
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    /*
+    .logo-button:hover {
+        transform: scale(1.1);
+    }
+    */
+    
+    section {
+        padding: 80px 10%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+    
+    
+    #about {
+        /*width: 100%;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;*/
+        background: #222a27;
+    }
+
+    .about-container {
+        width: 40%;
+        max-width: 800px;
+        padding: 25px;
+        margin-left: -70%;
+        background-color: rgba(0, 0, 0, 0.2); /* Hafif şeffaf arka plan */
+        border-radius: 12px;
+        z-index: 99;
+    }
+    
+    #projects {
+        background: #222a27; /*#27312d*/
+    }
+
+    .project-container {
+        width: 40%;
+        max-width: 800px;
+        padding: 25px;
+        margin-left: 0;
+        background-color: rgba(255, 255, 255, 0.1); /* Hafif şeffaf arka plan */
+        border-radius: 12px;
+    }
+    
+    #contact {
+        background: #313d38;
+    }
+    
+
+    #landing {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.80), transparent 80%, #222a27); /* Flu Katman */
+        backdrop-filter: blur(2px);
+        z-index: 1;
+    }
+    
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .image-button {
+        position: relative;
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: default;
+    }
+
+    .image-button:hover {
+        transform: scale(1.2); /* Zoom efekti */
+    }
+    
+    .left-panel {
+        top: 50px;
+        left: 50px;
+        position: relative;
+        width: 200px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-panel .image-button {
+        position: absolute;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .left-panel .image-button img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Butonları rastgele konumlandır */
+    .left-panel .image-button:nth-child(2) { top: 0px; left: 0px; }
+    .left-panel .image-button:nth-child(3) { top: 75px; left: 75px; }
+    .left-panel .image-button:nth-child(4) { top: 150px; left: 0px; }
+
+
+    .right-panel {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Butonlar ve içerik arasındaki boşluk */
+        align-items: center;
+    }
+
+    .right-panel .image-button {
+        position: relative;
+        left: 0;
+        transition: transform 0.4s ease-in-out, top 0.5s ease-in-out;
+    }
+
+    .right-panel .image-button img {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .right-panel .image-button:nth-child(2) { top: 140px; z-index: 5; }
+    .right-panel .image-button:nth-child(3) { top: 0px; z-index: 4; }
+    .right-panel .image-button:nth-child(4) { top: -140px; z-index: 3; }
+
+    /* Hover durumunda alt alta sıralanma */
+    .right-panel:hover .image-button:nth-child(2) { top: 0px; }
+    .right-panel:hover .image-button:nth-child(3) { top: 0px; }
+    .right-panel:hover .image-button:nth-child(4) { top: 0px; }
+
+    .right-title {
+        font-family: 'Raleway';
+        font-size: 24px;
+        font-weight: lighter;
+        font-variant: small-caps;
+        /*text-decoration: underline;*/
+        letter-spacing: 2px;
+        font-size: 24px;
+        color: #a7946e;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .left-title {
+        font-family: 'Raleway';
+        font-size: 24px;
+        font-weight: lighter ;
+        font-variant: small-caps;
+        /*text-decoration: underline;*/
+        letter-spacing: 2px;
+        position: absolute;
+        left: -30px; /* Sol tarafa biraz kaydır */
+        top: 40%; /* Orta noktaya hizala */
+        transform: translateY(-50%); /* Tam ortalamak için */
+        color: #a7946e;
+        font-size: 20px;
+        text-orientation: mixed;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a style="text-decoration: none;" href="main.html">
+                <button class="logo-button">
+                    <img src="img/mklg.png" alt="Logo">
+                </button>
+                </a>
+            </div>
+            <ul>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="landing">
+        <div class="background">
+            <img src="img/profile1.png" alt="Arka Plan Fotoğrafı">
+            <div class="overlay"></div>
+        </div>
+        <div class="about-container">
+            <h2 class="section-title" a style="color: #a7946e;">Hakkımda</h2>
+            <p>Video ve görsel düzenleme programlarında kişisel çalışmalarımla edindiğim deneyimi 
+                sektörde tecrübe kazanarak ileri taşımayı hedefliyorum. Yağlı boya,
+                fotoğrafçılık ve sinema ilgim tasarım yaklaşımıma
+                derinlik katıyor. Detay odaklı çalışmayı ve her
+                projede estetik ile işlevselliği birleştirerek en iyi
+                sonucu elde etmeyi öncelik edinirim. Lorem ipsum dolor sit, 
+                amet consectetur adipisicing elit. Et quos, iusto voluptatem voluptate sapiente nostrum quo placeat blanditiis similique nemo molestias, 
+                officiis illum ab quidem reiciendis iste ullam, asperiores perspiciatis.
+            </p>
+        </div>
+    </section>
+    <!--
+    <section id="about">
+            Boş Sektör
+    </section>
+    -->
+    <section id="projects">
+        <div class="content">
+            <div class="left-panel">
+                <h3 class="left-title">Logo</h3>
+                <button class="image-button">
+                  <img src="img/logo1.png" alt="Logo 1">
+                </button>
+                <button class="image-button">
+                  <img src="img/logo2.png" alt="Logo 2">
+                </button>
+                <button class="image-button">
+                  <img src="img/logo3.jpg" alt="Logo 3">
+                </button>
+            </div>
+
+            <div class="project-container">
+                    <p>
+                        Grafik Tasarım alanında yaptığım bazı çalışmalar şunlar;<br>
+                        <br>
+                        <li>UI / UX Tasarım(Web, Masaüstü),</li> 
+                        <li>Logo / Kurumsal kimlik tasarımı,</li>
+                        <li>Görsel edit/ renklendirme/ rötuş,</li>
+                        <li>Video kurgu-montaj</li>
+                        <li></li>
+                    </p>
+            </div>
+            
+            <div class="right-panel">
+                <h2 class="right-title">UI/UX</h2>
+                <button class="image-button">
+                  <img src="img/project1.png" alt="UI/UX 1">
+                </button>
+                <button class="image-button">
+                  <img src="img/project2.png" alt="UI/UX 2">
+                </button>
+                <button class="image-button">
+                  <img src="img/project3alt.png" alt="UI/UX 3">
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">İletişim</h2>
+        <p>Buraya iletişim bilgilerinizi ekleyebilirsiniz.</p>
+    </section>
+</body>
+</html>
